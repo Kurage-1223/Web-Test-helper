@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Web Test Helper",
+  "version": "4.1",
+  "description": "Select a question on a web test to find the answer from a pre-defined text file.",
+  "permissions": ["activeTab", "clipboardRead", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
